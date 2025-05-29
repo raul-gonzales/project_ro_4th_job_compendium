@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
+/* ---- Variables ---- */
+:root {
+  --marigold: #ffe27a;
+  --tangerine: #f89201;
+  --lava: #633521;
+  --cheek-red: #ad5a54;
+  --hot-fudge: #672614;
+  --oak-brown: #a57343;
+  --mocha: #e3c878;
+}
+
+/* ---- Global Styles ---- */
+* {
+  font-family: "Macondo", cursive;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--hot-fudge);
+  background: linear-gradient(
+    120deg,
+    var(--cheek-red) 0%,
+    var(--hot-fudge) 50%,
+    var(--oak-brown) 100%
+  );
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+/* ---- Page Header ---- */
+#page-header {
+  background: linear-gradient(
+    120deg,
+    var(--oak-brown) 0%,
+    var(--tangerine) 50%,
+    var(--marigold) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: inset 0px 4px 12px rgba(255, 255, 255, 0.2);
+  padding: 5px;
+  margin: 15px;
+  text-align: center;
+  color: #311108;
+}
+
+/* ---- Navigation ---- */
+.header-nav-container {
+  margin-bottom: 0px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.nav-button {
+  background-color: var(--marigold);
+  border-radius: 10px 10px 0 0;
+  padding: 15px;
+  font-size: 1.2em;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-button:hover {
+  background-color: var(--tangerine);
+  box-shadow: inset 0px 10px 10px var(--mocha),
+    inset 0px -10px 10px var(--mocha), inset -10px 0px 10px var(--mocha),
+    inset 10px 0px 10px var(--mocha);
+}
+
+/* ---- Content Section ---- */
+#content-container {
+  background-color: var(--marigold);
+  overflow-y: auto;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: 15px;
+  width: min(90vw, 1200px);
+}
+
+/* ---- Content Card Styling ---- */
+.content-card-outer {
+  background-color: white;
+  border-radius: 4px;
+  outline: 3px solid var(--oak-brown);
+  padding: 10px;
+  margin: 30px auto;
+  width: min(80vw, 1000px);
+}
+
+.content-card-outer h1 {
+  padding: 5px;
+  text-align: center;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.content-card-inner {
+  padding: 10px;
+  border-radius: 3px;
+  background-color: var(--cheek-red);
+  background: linear-gradient(
+    120deg,
+    var(--cheek-red) 0%,
+    var(--hot-fudge) 50%,
+    var(--oak-brown) 100%
+  );
+  max-height: fit-content;
+}
+
+#content-skills img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+div#content-builds.content {
+  color: white;
+}
+
+/* ---- Content Grid ---- */
+.content {
+  display: grid;
+  gap: 5px;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.content img {
+  width: 100%;
+  min-width: 200px;
+  height: auto;
+}
+
+.content .description {
+  color: white;
+}
+
+/* ---- Footer ---- */
+footer {
+  background-color: wheat;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  text-align: center;
+}
+
+/* ---- Modal ---- */
+.image-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 70%;
+  max-height: 70%;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: relative; /* Options: static, relative, absolute, fixed, sticky */
+  top: 5px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}

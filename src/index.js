@@ -4,6 +4,8 @@ import { renderAllClassesSkills } from "./skills_page.js"; // import function to
 import { renderAllBuilds } from "./builds_page.js";
 
 renderAllClasses();
+document.getElementById("classes-button").style.backgroundColor =
+  "white";
 document.getElementById("skills-button").style.backgroundColor =
   "var(--oak-brown)";
 document.getElementById("builds-button").style.backgroundColor =
